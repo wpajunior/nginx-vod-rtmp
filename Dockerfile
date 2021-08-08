@@ -36,8 +36,8 @@ RUN ./configure --add-module=../nginx-rtmp-module-1.1.9/ \
 
 FROM alpine:3.3 
 
-RUN addgroup -S -g 101 nginx \
-  && adduser -S  -G nginx -H -g "nginx user" -s /bin/false -u 101 nginx \
+RUN addgroup -S -g 1001 nginx \
+  && adduser -S  -G nginx -H -g "nginx user" -s /bin/false -u 1001 nginx \
   && apk --no-cache add pcre-dev \
   openssl \
   ca-certificates \
