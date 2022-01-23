@@ -1,4 +1,4 @@
-FROM alpine:3.3 AS builder  
+FROM alpine:3.4 AS builder  
 
 RUN apk add --no-cache --virtual .build-deps \
   gcc \
@@ -34,7 +34,7 @@ RUN ./configure --add-module=../nginx-rtmp-module-1.1.9/ \
   && make
 
 
-FROM alpine:3.3 
+FROM alpine:3.4
 
 RUN addgroup -S -g 1001 nginx \
   && adduser -S  -G nginx -H -g "nginx user" -s /bin/false -u 1001 nginx \

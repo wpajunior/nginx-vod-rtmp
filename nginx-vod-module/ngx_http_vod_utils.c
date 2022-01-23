@@ -257,11 +257,13 @@ ngx_http_vod_get_base_url(
 	}
 	else
 	{
-#if (NGX_HTTP_SSL)
+/*#if (NGX_HTTP_SSL)
 		use_https = (r->connection->ssl != NULL);
 #else
 		use_https = 0;
 #endif
+*/
+		use_https = 1;
 
 		if (use_https)
 		{
