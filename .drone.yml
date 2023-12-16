@@ -1,0 +1,16 @@
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+  - name: Build and Publish
+    image: plugins/gcr
+    settings:
+      registry: gcr.io
+      repo: gcr.io/iforge/nginx-vod-rtmp
+      tags: latest
+      json_key:
+        from_secret: gcr_credentials
+    when:
+      branch:
+        - master
